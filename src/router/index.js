@@ -11,9 +11,6 @@ import Vbutton from "../views/components/button.vue";
 import Vcard from "../views/components/card.vue";
 import Vdropdown from "../views/components/dropdown.vue";
 import Vmodal from "../views/components/modal.vue";
-import Login from "../views/layouts/auth/Login.vue";
-import Register from "../views/layouts/auth/Register.vue";
-import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -93,24 +90,7 @@ const routes = [
     meta: { title: "Blank Page" + appname },
   },
 
-  {
-    path: "/auth/login",
-    name: "Login",
-    component: Login,
-    meta: { title: "Login" + appname, hideNav: true },
-  },
-  {
-    path: "/auth/register",
-    name: "Register",
-    component: Register,
-    meta: { title: "Register" + appname, hideNav: true },
-  },
-  {
-    path: "/auth/forgot-password",
-    name: "ForgotPassword",
-    component: ForgotPassword,
-    meta: { title: "i Forgot Password" + appname, hideNav: true },
-  },
+
   // layout/error
   // default page 404
   {

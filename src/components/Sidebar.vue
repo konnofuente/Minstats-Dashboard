@@ -17,7 +17,7 @@
           class="text-2xl font-normal ml-3 mt-2 text-gray-800 dark:text-gray-200"
           translate="no"
         >
-          Windzo<span class="text-primary">.</span>
+          Minstats<span class="text-primary">.</span>
         </h2>
       </router-link>
       <div
@@ -125,74 +125,11 @@
               </template>
               <template v-slot:title> Layouts </template>
               <template v-slot:content>
-                <p>Coming soon.</p>
+                <p>Dummy.</p>
               </template>
             </menu-accordion>
           </div>
-          <div class="item mt-3">
-            <menu-accordion>
-              <template v-slot:icon>
-                <Icon icon="ri:pages-fill" />
-              </template>
-              <template v-slot:title> Pages </template>
-              <template v-slot:content>
-                <div class="">
-                  <router-link
-                    to="/blank"
-                    class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  >
-                    Blank Page
-                  </router-link>
-                  <menu-accordion>
-                    <template v-slot:title> Error Page </template>
-                    <template v-slot:content>
-                      <router-link
-                        to="/404page"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        404 page
-                      </router-link>
-                      <router-link
-                        to="/500"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        500 page
-                      </router-link>
-                      <router-link
-                        to="/maintenance"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        Maintenance page
-                      </router-link>
-                    </template>
-                  </menu-accordion>
-                  <menu-accordion>
-                    <template v-slot:title> Authentication </template>
-                    <template v-slot:content>
-                      <router-link
-                        to="/auth/login"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        Login
-                      </router-link>
-                      <router-link
-                        to="/auth/register"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        Register
-                      </router-link>
-                      <router-link
-                        to="/auth/forgot-password"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      >
-                        Forgot Password
-                      </router-link>
-                    </template>
-                  </menu-accordion>
-                </div>
-              </template>
-            </menu-accordion>
-          </div>
+
         </div>
       </div>
       <div class="pb-5">
@@ -212,29 +149,25 @@
           </menu-accordion>
         </div>
 
-        <div class="item mt-3">
-          <router-link to="/tables">
-            <button
-              class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
-            >
-              <span class="mr-3 text-xl"><Icon icon="bi:table" /></span>
-              <span class="w-full"> Tables </span>
-              <span class="box-border mt-1 text-gray-500"> </span>
-            </button>
-          </router-link>
-        </div>
+       
       </div>
     </div>
+<div class="hiden md:flex justify-center mt-10">
+
+  <MinstatsActionComponents></MinstatsActionComponents>
+</div>
   </nav>
 </template>
 
 <script>
   import { Icon } from "@iconify/vue";
   import MenuAccordion from "./MenuAccordion.vue";
+  import MinstatsActionComponents from "@/components/minstatsActionCard.vue";
   export default {
     components: {
       Icon,
       MenuAccordion,
+      MinstatsActionComponents
     },
   };
 </script>
