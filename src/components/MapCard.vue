@@ -1,17 +1,17 @@
 <template>
-    <div class=" h-full mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
+    <div class=" min-h-full mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
       <!-- Header Section with Title and Subtitle -->
       <div class="head p-5">
-        <h1 class="text-yellow-400 text-lg font-semibold">{{ title }}</h1>
+        <h1 class="dark:text-yellow-400 text-lg font-semibold">{{ title }}</h1>
         <p class="text-gray-400">{{ subtitle }}</p>
       </div>
   
       <!-- Map Container -->
-      <div class="map-container p-5 min-h-full">
+      <div class="map-container p-5 h-full">
         <LMap
           :zoom="7"
           :center="[7.3697, 12.3547]"
-          style="height: 380px; width: 100%; border-radius: 8px"
+          style="height: 480px; width: 100%; border-radius: 8px"
         >
           <LTileLayer :url="tileLayerUrl" />
         </LMap>

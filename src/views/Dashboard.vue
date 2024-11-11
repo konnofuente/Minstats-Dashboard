@@ -21,7 +21,7 @@
       >
         <div class="flex justify-between items-center mb-4">
           <div>
-            <h1 class="text-yellow-400 text-lg font-semibold">
+            <h1 class="dark:text-yellow-400 text-black text-lg font-semibold">
               Statistics per Service
             </h1>
             <p class="text-gray-400">Stats Summary</p>
@@ -249,7 +249,7 @@
         </div>
      
       </div>
-      <div class="p-4 col-span-1">
+      <div class=" pl-4 col-span-1">
         <MapCard title="Cameroon Map" subtitle="Cameroon regions and cities overview" />
       </div>
   

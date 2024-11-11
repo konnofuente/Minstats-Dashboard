@@ -1,7 +1,7 @@
 <template>
     <div class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700">
         <div class="head p-5">
-            <h1 class="text-yellow-400 text-lg font-semibold">{{ title }}</h1>
+            <h1 class="dark:text-yellow-400 text-lg font-semibold">{{ title }}</h1>
             <p class="text-gray-400">{{ subtitle }}</p>
           </div>
   
