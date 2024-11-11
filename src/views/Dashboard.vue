@@ -182,80 +182,77 @@
       />
     </div>
 
-    <div
-      class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700"
-    >
-      <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-        Latest Transactions
-      </h2>
-      <p class="text-gray-400 font-lexend font-normal">
-        This is a list of latest transactions
-      </p>
-      <div class="wrapping-table mt-10">
-        <table
-          class="w-full text-sm text-left text-gray-500 dark:text-gray-400 lg:overflow-auto overflow-x-scroll"
-        >
-          <thead
-            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+
+    <div class="grid md:grid-cols-3 grid-col-1 " >
+      
+      <div
+        class=" col-span-2 mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700"
+      >
+        <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
+          Latest Transactions
+        </h2>
+        <p class="text-gray-400 font-lexend font-normal">
+          This is a list of latest transactions
+        </p>
+        <div class="wrapping-table mt-10">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400 lg:overflow-auto overflow-x-scroll"
           >
-            <tr>
-              <th scope="col" class="uppercase px-6 py-3">Transaction</th>
-              <th scope="col" class="uppercase px-6 py-3">Date & Time</th>
-              <th scope="col" class="uppercase px-6 py-3">Amount</th>
-              <th scope="col" class="uppercase px-6 py-3">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50"
-              v-for="items in tableTransaction"
-              :key="items.transaction"
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
             >
-              <td class="px-6 py-4">
-                {{ items.transaction }}
-              </td>
-              <td class="px-6 py-4">
-                {{ items.datetime }}
-              </td>
-              <td class="px-6 py-4">
-                {{ items.amount }}
-              </td>
-              <td class="px-6 py-4">
-                <span
-                  class="text-green-800 bg-green-300 px-3 py-1 rounded-md"
-                  v-if="items.statusTransaction == 'completed'"
-                >
-                  {{ items.statusTransaction }}
-                </span>
-                <span
-                  class="text-purple-800 bg-purple-300 px-3 py-1 rounded-md"
-                  v-else-if="items.statusTransaction == 'progress'"
-                >
-                  {{ items.statusTransaction }}
-                </span>
-                <span
-                  class="text-red-800 bg-red-300 px-3 py-1 rounded-md"
-                  v-else
-                >
-                  {{ items.statusTransaction }}
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <th scope="col" class="uppercase px-6 py-3">Transaction</th>
+                <th scope="col" class="uppercase px-6 py-3">Date & Time</th>
+                <th scope="col" class="uppercase px-6 py-3">Amount</th>
+                <th scope="col" class="uppercase px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50"
+                v-for="items in tableTransaction"
+                :key="items.transaction"
+              >
+                <td class="px-6 py-4">
+                  {{ items.transaction }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ items.datetime }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ items.amount }}
+                </td>
+                <td class="px-6 py-4">
+                  <span
+                    class="text-green-800 bg-green-300 px-3 py-1 rounded-md"
+                    v-if="items.statusTransaction == 'completed'"
+                  >
+                    {{ items.statusTransaction }}
+                  </span>
+                  <span
+                    class="text-purple-800 bg-purple-300 px-3 py-1 rounded-md"
+                    v-else-if="items.statusTransaction == 'progress'"
+                  >
+                    {{ items.statusTransaction }}
+                  </span>
+                  <span
+                    class="text-red-800 bg-red-300 px-3 py-1 rounded-md"
+                    v-else
+                  >
+                    {{ items.statusTransaction }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     
       </div>
-      <div class="wrapper-button flex justify-between mt-3">
-        <select
-          name=""
-          id=""
-          class="dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-700 max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400"
-        >
-          <option value="">Last 7 years</option>
-        </select>
-        <button class="uppercase border-b border-red-600 text-red-600">
-          Transaction Report
-        </button>
+      <div class="p-4 col-span-1">
+        <MapCard title="Cameroon Map" subtitle="Cameroon regions and cities overview" />
       </div>
+  
     </div>
   </div>
 </template>
@@ -264,10 +261,11 @@
 // @ is an alias to /src
 import { Icon } from "@iconify/vue";
 import IconDataCard from "@/components/IconDataCard.vue";
-import LineChart from "@/components/Charts/lineChart.vue";
-import VerticalBarChart from "@/components/Charts/verticalBarChart.vue";
-import AreaChart from "@/components/Charts/areaChart.vue";
-import PieChart from "@/components/Charts/pieChart.vue";
+import LineChart from "@/components/Charts/LineChart.vue";
+import VerticalBarChart from "@/components/Charts/VerticalBarChart.vue";
+import AreaChart from "@/components/Charts/AreaChart.vue";
+import PieChart from "@/components/Charts/PieChart.vue";
+import MapCard from "@/components/MapCard.vue";
 
 export default {
   name: "Dashboard",
@@ -516,6 +514,7 @@ export default {
     VerticalBarChart,
     AreaChart,
     PieChart,
+    MapCard
   },
   mounted() {},
 };
