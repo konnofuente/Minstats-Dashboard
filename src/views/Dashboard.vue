@@ -159,51 +159,16 @@
 
  
     <div class="mt-2 lg:flex block lg:gap-2">
-      <div
-        class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700"
-      >
-        <div class="head p-5">
-          <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
-            1,780
-          </h2>
-          <p class="text-gray-400 font-lexend font-normal">
-            New products this week
-          </p>
-          <span class="float-right">
-            <h2 class="text-green-500 -mt-12 flex">
-              <span class="mr-2"> 27.9% </span
-              ><span>
-                <Icon icon="akar-icons:arrow-up" />
-              </span>
-            </h2>
-          </span>
-        </div>
-        <div class="wrapper-chart mt-5 pr-2 pl-2">
-          <apexchart
-            width="100%"
-            height="380"
-            type="bar"
-            :options="optionsBar"
-            :series="seriesBar"
-          ></apexchart>
-          <br />
-          <hr />
-          <div class="footer p-5">
-            <div class="wrapper-button flex justify-between mt-3">
-              <select
-                name=""
-                id=""
-                class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400"
-              >
-                <option value="">Last 7 days</option>
-              </select>
-              <button class="uppercase border-b border-red-600 text-red-600">
-                Product Report
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <VerticalBarChart
+      title="First"
+      subtitle="Stats Summary"
+      :percentage="27.9"
+      chartType="bar"
+      :options="optionsBar"
+      :series="seriesBar"
+    />
+  
       <div
         class="mt-2 bg-white dark:bg-gray-800 p-0 w-full rounded-md box-border border dark:border-gray-700"
       >
@@ -289,6 +254,10 @@
         </div>
       </div>
     </div>
+
+
+
+
     <div
       class="mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700"
     >
@@ -392,6 +361,7 @@
   import { Icon } from "@iconify/vue";
   import IconDataCard from "@/components/IconDataCard.vue"     
   import LineChart from "@/components/Charts/lineChart.vue"
+  import VerticalBarChart from "@/components/Charts/verticalBarChart.vue"
 
   export default {
     name: "Dashboard",
@@ -478,7 +448,7 @@
             },
           },
           legend: {
-            show: false,
+            show: true,
           },
           xaxis: {
             show: false,
@@ -594,7 +564,8 @@
     components: {
       Icon,
       IconDataCard,
-      LineChart
+      LineChart,
+      VerticalBarChart
     },
     mounted() {},
   };
