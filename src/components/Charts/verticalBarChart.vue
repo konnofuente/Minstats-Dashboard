@@ -25,22 +25,7 @@
         ></apexchart>
       </div>
   
-      <!-- Footer with Select and Button -->
-      <div class="footer p-5">
-        <div class="wrapper-button flex justify-between mt-3">
-          <select
-            name="dateRange"
-            class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 border max-w-lg px-4 py-3 block rounded-md text-gray-500 dark:text-gray-400"
-          >
-            <option value="7-days">Last 7 days</option>
-            <option value="1-month">Last 1 month</option>
-            <option value="1-year">Last 1 year</option>
-          </select>
-          <button class="uppercase border-b border-red-600 text-red-600">
-            Product Report
-          </button>
-        </div>
-      </div>
+ 
     </div>
   </template>
   
