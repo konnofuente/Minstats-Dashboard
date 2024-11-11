@@ -16,10 +16,10 @@
     </div>
 
 
-    <div class="flex justify-between">
+    <div class="grid md:flex justify-between">
 
       <!-- grid wrapper card -->
-      <div class="wrapper-card bg-white dark:bg-gray-800 text-white rounded-lg p-6 w-[59%]">
+      <div class="wrapper-card bg-white dark:bg-gray-800 text-white rounded-lg p-6 md:w-[59%] w-full">
         <div class="flex justify-between items-center mb-4">
           <div>
             <h1 class="text-yellow-400 text-lg font-semibold">Statistics per Service</h1>
@@ -151,7 +151,7 @@
       </div>
     
       <!-- end wrapper card -->
-  <div class="w-[40%]">
+  <div class="md:w-[40%]">
 
     <LineChart :seriesData="lineSeriesData" />
   </div>
