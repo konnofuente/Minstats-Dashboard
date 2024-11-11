@@ -202,55 +202,71 @@
               class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
             >
               <tr>
+                <th scope="col" class="uppercase px-6 py-3">#</th>
                 <th scope="col" class="uppercase px-6 py-3">Transaction</th>
                 <th scope="col" class="uppercase px-6 py-3">Date & Time</th>
-                <th scope="col" class="uppercase px-6 py-3">Amount</th>
-                <th scope="col" class="uppercase px-6 py-3">Status</th>
+                <th scope="col" class="uppercase px-6 py-3">Grading</th>
+                <th scope="col" class="uppercase px-6 py-3">percentage</th>
               </tr>
             </thead>
             <tbody>
               <tr
                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50"
-                v-for="items in tableTransaction"
+                v-for="(items, index) in tableTransaction"
                 :key="items.transaction"
               >
+                <td class="px-6 py-4">{{ index + 1 }}</td>
+                <td class="px-6 py-4">{{ items.transaction }}</td>
+                <td class="px-6 py-4">{{ items.datetime }}</td>
                 <td class="px-6 py-4">
-                  {{ items.transaction }}
-                </td>
+                  <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                  <div
+                    :class="{
+                      'bg-green-500': items.grading >= 75,
+                      'bg-yellow-500': items.grading >= 50 && items.grading < 75,
+                      'bg-red-500': items.grading < 50
+                    }"
+                    class="h-4 rounded-full"
+                    :style="{ width: items.grading + '%' }"
+                  ></div>
+                </div>
+                <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 block">
+                  {{ items.grading }}%
+                </span>
+              </td>
+                
                 <td class="px-6 py-4">
-                  {{ items.datetime }}
-                </td>
-                <td class="px-6 py-4">
-                  {{ items.amount }}
-                </td>
-                <td class="px-6 py-4">
-                  <span
-                    class="text-green-800 bg-green-300 px-3 py-1 rounded-md"
-                    v-if="items.statusTransaction == 'completed'"
-                  >
-                    {{ items.statusTransaction }}
-                  </span>
-                  <span
-                    class="text-purple-800 bg-purple-300 px-3 py-1 rounded-md"
-                    v-else-if="items.statusTransaction == 'progress'"
-                  >
-                    {{ items.statusTransaction }}
-                  </span>
+              
+              
                   <span
                     class="text-red-800 bg-red-300 px-3 py-1 rounded-md"
-                    v-else
+                    :class="{
+                      'bg-green-400': items.grading >= 75,
+                      'bg-yellow-500': items.grading >= 50 && items.grading < 75,
+                      'bg-red-500': items.grading < 50
+                    }"
                   >
-                    {{ items.statusTransaction }}
-                  </span>
-                </td>
+                  {{ items.grading }}
+                </span>
+              </td>
               </tr>
             </tbody>
           </table>
         </div>
+        
      
       </div>
       <div class=" pl-4 col-span-1">
         <MapCard title="Cameroon Map" subtitle="Cameroon regions and cities overview" />
+      </div>
+
+      <div>
+        <StackedColumnChart
+          :title="'Quarterly Revenue'"
+          :subtitle="'Revenue by Product Line for Q1 2024'"
+          :series="revenueData"
+          :options="chartOptions"
+        />
       </div>
   
     </div>
@@ -266,6 +282,7 @@ import VerticalBarChart from "@/components/Charts/VerticalBarChart.vue";
 import AreaChart from "@/components/Charts/AreaChart.vue";
 import PieChart from "@/components/Charts/PieChart.vue";
 import MapCard from "@/components/MapCard.vue";
+import StackedColumnChart from '@/components/Charts/StackedColumnChart.vue'
 
 export default {
   name: "Dashboard",
@@ -275,6 +292,42 @@ export default {
       // https://apexcharts.com/docs/chart-types/line-chart/
 
       // chart data area
+      revenueData: [
+        { name: "Product A", data: [120, 90, 70, 85] },
+        { name: "Product B", data: [85, 75, 95, 100] },
+      ],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          stacked: true,
+          toolbar: {
+            show: true,
+          },
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            borderRadius: 5,
+          },
+        },
+        xaxis: {
+          categories: ["Q1", "Q2", "Q3", "Q4"],
+        },
+        yaxis: {
+          title: {
+            text: "Revenue (in thousands)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        legend: {
+          position: "bottom",
+          horizontalAlign: "center",
+        },
+        colors: ["#FF4560", "#00E396", ],
+      },
+  
       lineSeriesData: [
         {
           name: "Session Duration",
@@ -479,31 +532,36 @@ export default {
 
       seriesDonut: [20, 15, 63, 83],
       tableTransaction: [
-        {
-          transaction: "Payment from Ethan Roger",
-          datetime: "Apr 22, 2022",
-          amount: "Rp.450.000",
-          statusTransaction: "completed",
-        },
-        {
-          transaction: "Payment from Taylor neal",
-          datetime: "May 2, 2022",
-          amount: "Rp.250.000",
-          statusTransaction: "completed",
-        },
-        {
-          transaction: "Payment from Tobi Ferreira",
-          datetime: "May 5, 2022",
-          amount: "Rp.150.000",
-          statusTransaction: "progress",
-        },
-        {
-          transaction: "Payment failed from #046577",
-          datetime: "May 5, 2022",
-          amount: "Rp.180.000",
-          statusTransaction: "cancelled",
-        },
-      ],
+    {
+      transaction: "Payment from Ethan Roger",
+      datetime: "Apr 22, 2022",
+      amount: "Rp.450.000",
+      statusTransaction: "completed",
+      grading: 85 // grading percentage
+    },
+    {
+      transaction: "Payment from Taylor Neal",
+      datetime: "May 2, 2022",
+      amount: "Rp.250.000",
+      statusTransaction: "completed",
+      grading: 70
+    },
+    {
+      transaction: "Payment from Tobi Ferreira",
+      datetime: "May 5, 2022",
+      amount: "Rp.150.000",
+      statusTransaction: "progress",
+      grading: 50
+    },
+    {
+      transaction: "Payment failed from #046577",
+      datetime: "May 5, 2022",
+      amount: "Rp.180.000",
+      statusTransaction: "cancelled",
+      grading: 30
+    },
+],
+
     };
     // end chart data line
   },
@@ -514,7 +572,8 @@ export default {
     VerticalBarChart,
     AreaChart,
     PieChart,
-    MapCard
+    MapCard,
+    StackedColumnChart
   },
   mounted() {},
 };

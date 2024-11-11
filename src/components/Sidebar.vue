@@ -3,16 +3,8 @@
   <nav class="sidebar bg-white dark:bg-gray-800">
     <!-- sidebar head -->
     <div class="sidebar-head p-4">
-      <router-link
-        to="/"
-        exact
-        class="flex"
-      >
-        <img
-          class="w-8 mt-1"
-          src="@/assets/logo/logo.svg"
-          alt="logo windzo"
-        />
+      <router-link to="/" exact class="flex">
+        <img class="w-8 mt-1" src="@/assets/logo/logo.svg" alt="logo windzo" />
         <h2
           class="text-2xl font-normal ml-3 mt-2 text-gray-800 dark:text-gray-200"
           translate="no"
@@ -60,6 +52,52 @@
               <span class="w-full"> Dashboard </span>
             </router-link>
           </div>
+
+          <div class="item mt-3">
+            <router-link to="/tables">
+              <button
+                class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              >
+                <span class="mr-3 text-xl"><Icon icon="wpf:statistics" /></span>
+                <span class="w-full"> Statistics </span>
+                <span class="box-border mt-1 text-gray-500"> </span>
+              </button>
+            </router-link>
+          </div>
+          <div class="item mt-3">
+            <router-link to="/tables">
+              <button
+                class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              >
+                <span class="mr-3 text-xl"><Icon icon="wpf:statistics" /></span>
+                <span class="w-full"> Statistics </span>
+                <span class="box-border mt-1 text-gray-500"> </span>
+              </button>
+            </router-link>
+          </div>
+          <div class="item mt-3">
+            <router-link to="/tables">
+              <button
+                class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              >
+                <span class="mr-3 text-xl"><Icon icon="wpf:statistics" /></span>
+                <span class="w-full"> Statistics </span>
+                <span class="box-border mt-1 text-gray-500"> </span>
+              </button>
+            </router-link>
+          </div>
+          <div class="item mt-3">
+            <router-link to="/tables">
+              <button
+                class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              >
+                <span class="mr-3 text-xl"><Icon icon="wpf:statistics" /></span>
+                <span class="w-full"> Statistics </span>
+                <span class="box-border mt-1 text-gray-500"> </span>
+              </button>
+            </router-link>
+          </div>
+
           <div class="item mt-3">
             <menu-accordion>
               <template v-slot:icon>
@@ -129,7 +167,6 @@
               </template>
             </menu-accordion>
           </div>
-
         </div>
       </div>
       <div class="pb-5">
@@ -148,26 +185,23 @@
             </template>
           </menu-accordion>
         </div>
-
-       
       </div>
     </div>
-<div class="hiden md:flex justify-center mt-10">
-
-  <MinstatsActionComponents></MinstatsActionComponents>
-</div>
+    <div class="hiden md:flex justify-center mt-10">
+      <MinstatsActionComponents></MinstatsActionComponents>
+    </div>
   </nav>
 </template>
 
 <script>
-  import { Icon } from "@iconify/vue";
-  import MenuAccordion from "./MenuAccordion.vue";
-  import MinstatsActionComponents from "@/components/minstatsActionCard.vue";
-  export default {
-    components: {
-      Icon,
-      MenuAccordion,
-      MinstatsActionComponents
-    },
-  };
+import { Icon } from "@iconify/vue";
+import MenuAccordion from "./MenuAccordion.vue";
+import MinstatsActionComponents from "@/components/minstatsActionCard.vue";
+export default {
+  components: {
+    Icon,
+    MenuAccordion,
+    MinstatsActionComponents,
+  },
+};
 </script>
