@@ -554,7 +554,7 @@
   // @ is an alias to /src
   import { Icon } from "@iconify/vue";
   import IconDataCard from "@/components/IconDataCard.vue"     
-  import LineChart from "@/components/Charts/lineChart.vue"
+  import LineChart from "@/components/Charts/LineChart.vue"
 
   export default {
     name: "Dashboard",
