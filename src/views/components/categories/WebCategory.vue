@@ -1,21 +1,21 @@
 <template>
   <div class="flex justify-center">
 
-    <div class="  w-[90%] bg-gray-900 text-white mt-20 h-[70vh]">
+    <div class="  w-[90%]  text-white mt-20 h-[70vh]">
   
       <div class="flex justify-end">
   
         <button
           @click="showModal = true"
-          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+          class="bg-blue-500 hover:bg-blue-600 text-gray-900 dark:text-gray-200 py-2 px-4 rounded-md"
         >
           Add Category Dimension
         </button>
       </div>
       <div class="flex justify-between mt-20">
         <div>
-          <h1 class="text-2xl font-semibold mb-2">Web Development Category</h1>
-          <p class="mb-4 text-gray-400">
+          <h1 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-gray-200">Web Development Category</h1>
+          <p class="mb-4 dark:text-yellow-400 text-black">
             You can also invert the colors—with light text on dark backgrounds.
           </p>
         </div>
@@ -24,9 +24,11 @@
       </div>
   
       <!-- Table -->
-      <table class="table-auto w-full mt-4 text-gray-300">
-        <thead>
-          <tr class="border-b border-gray-700">
+      <table class="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400 lg:overflow-auto overflow-x-scroll">
+        <thead
+         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr class="">
             <th class="px-4 py-8">Name</th>
             <th class="px-4 py-8">Types</th>
             <th class="px-4 py-8">Asset</th>
@@ -38,7 +40,7 @@
           <tr
             v-for="(item, index) in items"
             :key="index"
-            class="border-b border-gray-800"
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-900 odd:bg-white even:bg-gray-50"
           >
             <td class="px-4 py-8">{{ item.name }}</td>
             <td class="px-4 py-8">{{ item.type }}</td>
