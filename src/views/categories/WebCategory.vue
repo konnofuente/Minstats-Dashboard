@@ -35,9 +35,9 @@
           <tr class="">
             <th class="px-4 py-8">Name</th>
             <th class="px-4 py-8">Types</th>
-            <th class="px-4 py-8">Asset</th>
-            <th class="px-4 py-8">Company</th>
-            <th class="px-4 py-8">Location</th>
+            <th class="px-4 py-8">Descrition</th>
+            <th class="px-4 py-8">Values</th>
+            <th class="px-4 py-8">Order</th>
           </tr>
         </thead>
         <tbody>
@@ -48,21 +48,23 @@
           >
             <td class="px-4 py-8">{{ item.name }}</td>
             <td class="px-4 py-8">{{ item.type }}</td>
-            <td class="px-4 py-8">{{ item.asset }}</td>
-            <td class="px-4 py-8">{{ item.company }}</td>
-            <td class="px-4 py-8">{{ item.location }}</td>
+            <td class="px-4 py-8">{{ item.description }}</td>
+            <td class="px-4 py-8">{{ item.values }}</td>
+            <td class="px-4 py-8">{{ item.order }}</td>
           </tr>
         </tbody>
       </table>
 
       <!-- Modal Form -->
       <div
-        v-if="showModal"
+      v-if="showModal"
+
         class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
       >
         <div class="bg-white text-black p-6 rounded-md w-full max-w-[70%]">
           <div class="grid grid-cols-1 justify-center mb-8">
-            <h2 class="text-[40px] text-center font-bold mb-4">Add Category</h2>
+            <h2 class="text-[40px] text-center font-bold mb-4">Add Category Dimension
+            </h2>
             <p class="text-center">
               Add another statistics for your categories services
             </p>
@@ -114,7 +116,7 @@
                 />
               </div>
 
-              <!-- Location -->
+              <!-- order -->
               <div class="mb-4">
                 <label class="block text-sm font-medium">Possible values</label>
                 <input
@@ -166,30 +168,30 @@ export default {
         {
           name: "Parsley Montana",
           type: "Candy",
-          asset: 7634825,
-          company: "Blue Riband",
-          location: "California",
+          description: 7634825,
+          values: "Blue Riband",
+          order: "California",
         },
         {
           name: "Jarvis Pepperspray",
           type: "Treenut",
-          asset: 8421678,
-          company: "Burton's Maryland Specials",
-          location: "Massachusetts",
+          description: 8421678,
+          values: "Burton's Maryland Specials",
+          order: "Massachusetts",
         },
         {
           name: "Phillip Anthropy",
           type: "Sweetener",
-          asset: 8462150,
-          company: "Quaker Instant Oatmeal",
-          location: "Illinois",
+          description: 8462150,
+          values: "Quaker Instant Oatmeal",
+          order: "Illinois",
         },
         {
           name: "Alan Fresco",
           type: "Dairy",
-          asset: 8741632,
-          company: "Disney Pixar Milk Chocolate Crispy Bars",
-          location: "Michigan",
+          description: 8741632,
+          values: "Disney Pixar Milk Chocolate Crispy Bars",
+          order: "Michigan",
         },
       ],
 
