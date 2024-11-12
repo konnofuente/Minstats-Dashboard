@@ -27,7 +27,7 @@
           </svg>
         </button>
 
-        <h1 class="text-white mr-24 text-[40px]" >Dashboard </h1>
+        <h1 class="text-gray-800 dark:text-white mr-24 text-[40px]" >Dashboard </h1>
 
         <div
           class="input-box border dark:bg-gray-900 lg:ml-0 ml-5 dark:border-gray-700 rounded-md hidden lg:w-search w-full box-border lg:flex md:flex focus-within:bg-gray-100 dark:focus-within:bg-gray-700"

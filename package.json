@@ -1,7 +1,6 @@
 {
   "name": "Minstats",
   "version": "1.0.1",
-  "description": "Free Open Source Template Dashboard Admin Vue Tailwind CSS",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,10 +8,7 @@
     "windsass": "sass --watch src/assets/sass/app.windzo.scss src/assets/sass/css/windzo.css",
     "require": "npm i -g sass @vue/cli"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sahrullahh/windzo.git"
-  },
+
   "license": "MIT",
   "dependencies": {
     "apexcharts": "^3.34.0",
@@ -22,6 +18,7 @@
     "core-js": "^3.8.3",
     "dropzone-vue": "^0.1.11",
     "flowbite": "^1.4.1",
+    "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "perfect-scrollbar": "^1.5.5",
     "pinia": "^2.0.33",
@@ -35,6 +32,7 @@
     "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^4.0.3",
     "vue3-apexcharts": "^1.4.1",
+    "vue3-leaflet": "^1.0.50",
     "vue3-perfect-scrollbar": "^1.6.0"
   },
   "devDependencies": {
