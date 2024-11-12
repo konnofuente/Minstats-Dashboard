@@ -17,8 +17,8 @@ import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
-import WebCategory from "@/views/components/categories/WebCategory.vue";
-
+import WebCategory from "@/views/categories/WebCategory.vue";
+import AddCategory from "@/views/categories/AddCategory.vue";
 // error page
 import Page404 from "../views/layouts/error/404.vue";
 import Page500 from "../views/layouts/error/500.vue";
@@ -97,6 +97,12 @@ const routes = [
     path: "/WebCategory",
     name: "Web Category",
     component: WebCategory,
+    meta: { title: "Blank Page" + appname },
+  },
+  {
+    path: "/AddCategory",
+    name: "Add Category",
+    component: AddCategory,
     meta: { title: "Blank Page" + appname },
   },
 

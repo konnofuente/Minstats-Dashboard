@@ -182,11 +182,9 @@
       />
     </div>
 
-
-    <div class="grid md:grid-cols-3 grid-col-1 " >
-      
+    <div class="grid md:grid-cols-3 grid-col-1">
       <div
-        class=" col-span-2 mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700"
+        class="col-span-2 mt-2 bg-white dark:bg-gray-800 p-5 w-full rounded-md box-border border dark:border-gray-700"
       >
         <h2 class="font-bold text-lg text-gray-800 dark:text-gray-200">
           Latest Transactions
@@ -219,45 +217,50 @@
                 <td class="px-6 py-4">{{ items.transaction }}</td>
                 <td class="px-6 py-4">{{ items.datetime }}</td>
                 <td class="px-6 py-4">
-                  <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
                   <div
-                    :class="{
-                      'bg-green-500': items.grading >= 75,
-                      'bg-yellow-500': items.grading >= 50 && items.grading < 75,
-                      'bg-red-500': items.grading < 50
-                    }"
-                    class="h-4 rounded-full"
-                    :style="{ width: items.grading + '%' }"
-                  ></div>
-                </div>
-                <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 block">
-                  {{ items.grading }}%
-                </span>
-              </td>
-                
+                    class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700"
+                  >
+                    <div
+                      :class="{
+                        'bg-green-500': items.grading >= 75,
+                        'bg-yellow-500':
+                          items.grading >= 50 && items.grading < 75,
+                        'bg-red-500': items.grading < 50,
+                      }"
+                      class="h-4 rounded-full"
+                      :style="{ width: items.grading + '%' }"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm text-gray-500 dark:text-gray-400 mt-1 block"
+                  >
+                    {{ items.grading }}%
+                  </span>
+                </td>
+
                 <td class="px-6 py-4">
-              
-              
                   <span
                     class="text-red-800 bg-red-300 px-3 py-1 rounded-md"
                     :class="{
                       'bg-green-400': items.grading >= 75,
-                      'bg-yellow-500': items.grading >= 50 && items.grading < 75,
-                      'bg-red-500': items.grading < 50
+                      'bg-yellow-500':
+                        items.grading >= 50 && items.grading < 75,
+                      'bg-red-500': items.grading < 50,
                     }"
                   >
-                  {{ items.grading }}
-                </span>
-              </td>
+                    {{ items.grading }}
+                  </span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-        
-     
       </div>
-      <div class=" pl-4 col-span-1">
-        <MapCard title="Cameroon Map" subtitle="Cameroon regions and cities overview" />
+      <div class="pl-4 col-span-1">
+        <MapCard
+          title="Cameroon Map"
+          subtitle="Cameroon regions and cities overview"
+        />
       </div>
 
       <div>
@@ -268,7 +271,6 @@
           :options="chartOptions"
         />
       </div>
-  
     </div>
   </div>
 </template>
@@ -282,7 +284,7 @@ import VerticalBarChart from "@/components/Charts/VerticalBarChart.vue";
 import AreaChart from "@/components/Charts/AreaChart.vue";
 import PieChart from "@/components/Charts/PieChart.vue";
 import MapCard from "@/components/MapCard.vue";
-import StackedColumnChart from '@/components/Charts/StackedColumnChart.vue'
+import StackedColumnChart from "@/components/Charts/StackedColumnChart.vue";
 
 export default {
   name: "Dashboard",
@@ -325,9 +327,9 @@ export default {
           position: "bottom",
           horizontalAlign: "center",
         },
-        colors: ["#FF4560", "#00E396", ],
+        colors: ["#FF4560", "#00E396"],
       },
-  
+
       lineSeriesData: [
         {
           name: "Session Duration",
@@ -340,6 +342,10 @@ export default {
         {
           name: "Total Visits",
           data: [80, 70, 90, 85, 60, 75, 70, 85, 65, 80, 75, 70],
+        },
+        {
+          name: "Total Visits",
+          data: [80, 30, 90, 85, 60, 55, 70, 84, 95, 20, 75, 30],
         },
       ],
       optionsArea: {
@@ -532,36 +538,35 @@ export default {
 
       seriesDonut: [20, 15, 63, 83],
       tableTransaction: [
-    {
-      transaction: "Payment from Ethan Roger",
-      datetime: "Apr 22, 2022",
-      amount: "Rp.450.000",
-      statusTransaction: "completed",
-      grading: 85 // grading percentage
-    },
-    {
-      transaction: "Payment from Taylor Neal",
-      datetime: "May 2, 2022",
-      amount: "Rp.250.000",
-      statusTransaction: "completed",
-      grading: 70
-    },
-    {
-      transaction: "Payment from Tobi Ferreira",
-      datetime: "May 5, 2022",
-      amount: "Rp.150.000",
-      statusTransaction: "progress",
-      grading: 50
-    },
-    {
-      transaction: "Payment failed from #046577",
-      datetime: "May 5, 2022",
-      amount: "Rp.180.000",
-      statusTransaction: "cancelled",
-      grading: 30
-    },
-],
-
+        {
+          transaction: "Payment from Ethan Roger",
+          datetime: "Apr 22, 2022",
+          amount: "Rp.450.000",
+          statusTransaction: "completed",
+          grading: 85, // grading percentage
+        },
+        {
+          transaction: "Payment from Taylor Neal",
+          datetime: "May 2, 2022",
+          amount: "Rp.250.000",
+          statusTransaction: "completed",
+          grading: 70,
+        },
+        {
+          transaction: "Payment from Tobi Ferreira",
+          datetime: "May 5, 2022",
+          amount: "Rp.150.000",
+          statusTransaction: "progress",
+          grading: 50,
+        },
+        {
+          transaction: "Payment failed from #046577",
+          datetime: "May 5, 2022",
+          amount: "Rp.180.000",
+          statusTransaction: "cancelled",
+          grading: 30,
+        },
+      ],
     };
     // end chart data line
   },
@@ -573,7 +578,7 @@ export default {
     AreaChart,
     PieChart,
     MapCard,
-    StackedColumnChart
+    StackedColumnChart,
   },
   mounted() {},
 };

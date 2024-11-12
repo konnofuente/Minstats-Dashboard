@@ -81,6 +81,13 @@
                   >
                     App Dev Category
                   </router-link>
+                  <router-link
+                    to="/AddCategory"
+                    class="w-full text-left block rounded-md p-3 mt-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  >
+                    
+                  Add Category
+                  </router-link>
 
              
                 </div>

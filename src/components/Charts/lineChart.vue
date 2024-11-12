@@ -45,7 +45,7 @@
             width: [3, 3, 3],
             dashArray: [0, 5, 8], // Controls the line style: solid, dashed, dotted
           },
-          colors: ["#3b82f6", "#10b981", "#f59e0b"], // Blue, Green, Yellow for each series line
+          colors: ["#3b82f6", "#10b981", "#f59e0b","#d59e02"], // Blue, Green, Yellow for each series line
           xaxis: {
             type: "category",
             categories: [
