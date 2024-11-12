@@ -4,7 +4,7 @@
       <div class="bg-white dark:bg-gray-900 w-full">
         <form>
           <div
-            class="form-body max-w-xl mx-auto lg:p-20 p-8 lg:mt-10 mt-5 space-y-8"
+            class="form-body max-w-[50%] mx-auto lg:p-20 p-8 lg:mt-10 mt-5 space-y-8"
           >
             <div
               class="form-head cursor-pointer"
@@ -24,24 +24,7 @@
                 Please enter your information to register account.
               </p>
             </div>
-            <button
-              type="button"
-              class="dark:text-white text-gray-700 flex justify-center gap-2 dark:bg-gray-700 bg-gray-100 hover:bg-gray-100/50 p-2 w-full rounded-md"
-            >
-              <img
-                class="w-8"
-                src="../../../assets/logo/google-logo.svg"
-                alt=""
-              />
-              <p class="mt-1 dark:text-white text-gray-700">
-                Sign up with Google
-              </p>
-            </button>
-            <span class="flex items-center justify-center space-x-2">
-              <span class="h-px dark:bg-gray-600 bg-gray-200 w-full"></span>
-              <span class="font-normal text-gray-500">or </span>
-              <span class="h-px dark:bg-gray-600 bg-gray-200 w-full"></span>
-            </span>
+
             <div class="space-y-5">
               <div class="relative z-0 w-full mb-6 group">
                 <input
@@ -55,7 +38,49 @@
                 <label
                   for="floating_text"
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Username</label
+                  >First Name</label
+                >
+              </div>
+              <div class="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_text"
+                  id="floating_text"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+                  placeholder=" "
+                />
+                <label
+                  for="floating_text"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Second Name</label
+                >
+              </div>
+              <div class="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_text"
+                  id="floating_text"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+                  placeholder=" "
+                />
+                <label
+                  for="floating_text"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Grade</label
+                >
+              </div>
+              <div class="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_text"
+                  id="floating_text"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+                  placeholder=" "
+                />
+                <label
+                  for="floating_text"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Services</label
                 >
               </div>
               <div class="relative z-0 w-full mb-6 group">
